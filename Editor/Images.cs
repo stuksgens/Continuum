@@ -15,7 +15,7 @@ namespace Lasm.Utilities
                 return GetStateTexture(collection, name);
             }
 
-            var path = PathOf(rootFileName) + "Editor/Resources/Icons";
+            var path = PathOf(rootFileName) + "Editor/Resources/Icons/";
             var multiTex = new MultiTexture();
 
             multiTex.personal = AssetDatabase.LoadAssetAtPath<Texture2D>(path + name + ".png");
