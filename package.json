@@ -1,0 +1,13 @@
+{
+  "name": "com.lasm.dependencies",
+  "version": "1.0.0",
+  "displayName": "Lasm Dependencies",
+  "description": "All the dependency dlls required for Life and Style Medias other assets. Includes Odin Serializer.",
+  "keywords": [
+  ],
+  "author": {
+    "name": "Life and Style Media",
+    "email": "info@lifeandstylemedia.com",
+    "url": "https://www.lifeandstylemedia.com"
+  }
+}
