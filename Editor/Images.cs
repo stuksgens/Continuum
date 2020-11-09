@@ -1,5 +1,4 @@
-﻿using Ludiq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
@@ -9,25 +8,25 @@ namespace Lasm.Utilities
     {
         private static Dictionary<string, Dictionary<string, MultiTexture>> collections = new Dictionary<string, Dictionary<string, MultiTexture>>();
 
-        public static EditorTexture Load(string collection, string name, string rootFileName)
+        public static Texture2D Load(string collection, string name, string rootFileName)
         {
             if (collections.ContainsKey(collection) && collections[collection].ContainsKey(name))
             {
                 return GetStateTexture(collection, name);
             }
 
-            var path = PathOf(rootFileName);
+            var path = PathOf(rootFileName) + "Editor/Resources/Icons";
             var multiTex = new MultiTexture();
 
-            multiTex.personal = EditorTexture.Single(AssetDatabase.LoadAssetAtPath<Texture2D>(path + name + ".png"));
-            multiTex.pro = EditorTexture.Single(AssetDatabase.LoadAssetAtPath<Texture2D>(path + name + "@Pro.png"));
+            multiTex.personal = AssetDatabase.LoadAssetAtPath<Texture2D>(path + name + ".png");
+            multiTex.pro = AssetDatabase.LoadAssetAtPath<Texture2D>(path + name + "@Pro.png");
 
             collections[collection].Add(name, multiTex);
 
             return GetStateTexture(collection, name);
         }
 
-        private static EditorTexture GetStateTexture(string collection, string name)
+        private static Texture2D GetStateTexture(string collection, string name)
         {
             if (EditorGUIUtility.isProSkin)
             {
@@ -52,8 +51,8 @@ namespace Lasm.Utilities
 
         public class MultiTexture
         {
-            public EditorTexture personal;
-            public EditorTexture pro;
+            public Texture2D personal;
+            public Texture2D pro;
         }
     }
 }
