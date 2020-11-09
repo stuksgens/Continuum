@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Lasm.Bolt.UniversalSave
+namespace Lasm.Utilities
 {
     public static class Images
     {
