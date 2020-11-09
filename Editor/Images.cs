@@ -10,7 +10,12 @@ namespace Lasm.Utilities
 
         public static Texture2D Load(string collection, string name, string rootFileName)
         {
-            if (collections.ContainsKey(collection) && collections[collection].ContainsKey(name))
+            if (!collections.ContainsKey(collection))
+            {
+                collections.Add(collection, new Dictionary<string, MultiTexture>());
+            }
+
+            if (collections[collection].ContainsKey(name))
             {
                 return GetStateTexture(collection, name);
             }
