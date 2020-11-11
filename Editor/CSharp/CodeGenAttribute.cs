@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Lasm.Humility;
+using System;
 
-namespace Lasm.Humility
+namespace Lasm.CSharp
 {
     public sealed class CodeGenAttribute : DecoratorAttribute
     {
