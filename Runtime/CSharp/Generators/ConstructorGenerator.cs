@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Lasm.CSharp
+namespace Lasm.Dependencies.CSharp
 {
     public sealed class ConstructorGenerator : BodyGenerator
     {

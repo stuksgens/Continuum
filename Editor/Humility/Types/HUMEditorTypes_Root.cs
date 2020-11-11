@@ -5,7 +5,7 @@ using UnityEngine;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public static partial class HUMEditorTypes
     {

@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Reflection;
 using UnityEditor;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public static partial class HUMEditorColor
     {

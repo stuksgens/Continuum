@@ -1,7 +1,7 @@
-﻿using Lasm.Humility;
+﻿using Lasm.Dependencies.Humility;
 using System.Collections.Generic;
 
-namespace Lasm.CSharp
+namespace Lasm.Dependencies.CSharp
 {
     public sealed class InvokeParametersGenerator : ConstructGenerator
     {

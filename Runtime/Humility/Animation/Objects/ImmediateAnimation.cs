@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.Playables;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public sealed class ImmediateAnimation
     {

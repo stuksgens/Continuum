@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public static partial class HUMTexture_Children
     {

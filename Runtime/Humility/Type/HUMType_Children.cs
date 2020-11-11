@@ -1,4 +1,4 @@
-﻿using Lasm.CSharp;
+﻿using Lasm.Dependencies.CSharp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public static partial class HUMType_Children
     {

@@ -1,4 +1,4 @@
-﻿namespace Lasm.CSharp
+﻿namespace Lasm.Dependencies.CSharp
 {
     /// <summary>
     /// A generator that sets up a body { } for you. Easily add what comes before, during, and after the body.

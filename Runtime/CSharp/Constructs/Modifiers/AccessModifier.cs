@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Lasm.CSharp
+namespace Lasm.Dependencies.CSharp
 { 
     /// <summary>
     /// The scope of a C# construct. Excludes root constructs, such as a class declaration. Use RootAccessModifier for those.

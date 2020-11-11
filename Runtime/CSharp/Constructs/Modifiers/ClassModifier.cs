@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lasm.CSharp
+namespace Lasm.Dependencies.CSharp
 {
     /// <summary>
     /// A modifier that further changes or expands on the scope of a class.

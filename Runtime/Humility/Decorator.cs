@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     /// <summary>
     /// Binds itself to a type. Allows for easy lookup of a type, based on an objects instance.

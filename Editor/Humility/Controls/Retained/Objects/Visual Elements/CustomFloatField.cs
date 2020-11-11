@@ -2,7 +2,7 @@
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public class CustomFloatField : AdvancedField<FloatField, float>
     {

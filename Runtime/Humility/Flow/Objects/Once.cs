@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     public sealed class Once
     {

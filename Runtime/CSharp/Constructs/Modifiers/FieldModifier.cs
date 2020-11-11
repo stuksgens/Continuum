@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lasm.CSharp
+namespace Lasm.Dependencies.CSharp
 {
     public enum FieldModifier
     {

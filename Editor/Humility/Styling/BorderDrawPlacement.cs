@@ -1,4 +1,4 @@
-﻿namespace Lasm.Humility
+﻿namespace Lasm.Dependencies.Humility
 {
     /// <summary>
     /// Where the placement of a border goes.

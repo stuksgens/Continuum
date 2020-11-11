@@ -1,4 +1,4 @@
-﻿namespace Lasm.CSharp
+﻿namespace Lasm.Dependencies.CSharp
 {
     public enum IndexerModifier
     {

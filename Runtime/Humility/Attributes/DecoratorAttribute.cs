@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lasm.Humility
+namespace Lasm.Dependencies.Humility
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = true)]
     public abstract class DecoratorAttribute : Attribute
