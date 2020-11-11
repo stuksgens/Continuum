@@ -2,7 +2,7 @@
   "name": "com.lasm.dependencies",
   "version": "1.0.0",
   "displayName": "Dependencies",
-  "description": "Life and Style Media core library and third party integrations for all our assets. This is required for every tool or extension.",
+  "description": "Depenedencies is the Life and Style Media Core Framework\r.\n\r\nDependencies is required for all Life and Style Media tools and extension.\n\nC# Preview Window\r\nC# Generation library\r\nHumility Speech Like Library\r\nCustom Sequential Functions and Routines\r\nOdin Serializer",
   "keywords": [],
   "author": {
     "name": "Life and Style Media",
