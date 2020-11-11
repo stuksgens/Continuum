@@ -4,7 +4,7 @@ using Lasm.Dependencies.Humility;
 
 namespace Lasm.Dependencies.Editor
 {
-    public static class UAGUI
+    public static class CoreGUI
     {
         public static void IconFoldout(ref bool isOpen, string label, Texture2D icon, Action content, int padding = 4)
         {
