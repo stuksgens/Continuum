@@ -10,9 +10,9 @@ The Dependencies are not ready for average public use. We are not excepting bug 
 
 - C# Preview Window<br/>
 - Asset Explorer<br/>
-- Task Bar with Minimizable and Maximizable Windows<br/>
+- Task Bar with Minimize, Maximize and Docking<br/>
 - C# Generation library<br/>
 - Humility Speech Like Library<br/>
-- Ebb & Flow Gameplay Framework<br/>
+- Custom Sequential Functions and Routines<br/>
 - Odin Serializer<br/>
 
