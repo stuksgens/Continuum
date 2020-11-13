@@ -2,6 +2,6 @@
 {
     public interface ICSharpSelectable
     {
-        string Generate();
+        ConstructGenerator Code();
     }
 }

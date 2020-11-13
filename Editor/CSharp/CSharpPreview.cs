@@ -10,8 +10,13 @@ namespace Lasm.Dependencies.CSharp.Editor
         public static CSharpPreview instance;
 
         string output = string.Empty;
+
         [SerializeField]
         private Vector2 scrollPosition;
+
+        public static Color background => Styles.backgroundColor.Darken(0.1f);
+
+        public static ICSharpSelectable selection;
 
         [MenuItem("Window/Life and Style Media/C# Preview")]
         private static void Open()
@@ -20,10 +25,6 @@ namespace Lasm.Dependencies.CSharp.Editor
             window.titleContent = new GUIContent("C# Preview");
             instance = window;
         }
-
-        public static Color background => Styles.backgroundColor.Darken(0.1f);
-
-        public static ICSharpSelectable selection;
 
         private void OnEnable()
         {
@@ -38,7 +39,7 @@ namespace Lasm.Dependencies.CSharp.Editor
                 {
                     if (selection != null)
                     {
-                        output = selection.Generate();
+                        output = selection.Code().Generate(0);
                     }
 
                     output = output.Replace("/*", "<color=#CC3333>/*");

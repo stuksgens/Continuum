@@ -3,9 +3,9 @@ using System;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class CodeGenAttribute : DecoratorAttribute
+    public sealed class CodeGeneratorAttribute : DecoratorAttribute
     {
-        public CodeGenAttribute(Type type) : base(type)
+        public CodeGeneratorAttribute(Type type) : base(type)
         {
         }
     }
