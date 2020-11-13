@@ -7,7 +7,7 @@ namespace Lasm.Dependencies.CSharp
     /// <summary>
     /// A generator that retains data for creating a new class as a string.
     /// </summary>
-    public sealed class ClassGenerator : BodyGenerator
+    public sealed class ClassGenerator : TypeGenerator
     {
         public RootAccessModifier scope;
         public AccessModifier nestedScope;

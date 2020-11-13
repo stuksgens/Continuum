@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class InterfaceGenerator : BodyGenerator
+    public sealed class InterfaceGenerator : TypeGenerator
     {
 #pragma warning disable 0649
         public RootAccessModifier scope;

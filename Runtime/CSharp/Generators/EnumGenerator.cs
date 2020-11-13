@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class EnumGenerator : BodyGenerator
+    public sealed class EnumGenerator : TypeGenerator
     {
 #pragma warning disable 0649
         private RootAccessModifier scope;

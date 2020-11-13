@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class StructGenerator : BodyGenerator
+    public sealed class StructGenerator : TypeGenerator
     {
         private RootAccessModifier scope;
 #pragma warning disable 0414
