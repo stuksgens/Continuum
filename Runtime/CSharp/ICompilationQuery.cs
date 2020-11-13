@@ -2,7 +2,7 @@
 
 namespace Lasm.Dependencies.CSharp
 {
-    public interface ICodeGenerationQuery
+    public interface ICompilationQuery
     {
         IEnumerable<ICompilable> Query();
     }
