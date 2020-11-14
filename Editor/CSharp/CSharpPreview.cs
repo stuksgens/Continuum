@@ -16,7 +16,27 @@ namespace Lasm.Dependencies.CSharp.Editor
 
         public static Color background => Styles.backgroundColor.Darken(0.1f);
 
-        public static ICodeGenerator code;
+        private GUIStyle labelStyle;
+
+        [SerializeField]
+        private bool shouldRefresh = true;
+
+        [SerializeReference]
+        private ICodeGenerator _code;
+        public ICodeGenerator code
+        {
+            get => _code;
+            set
+            {
+                _code = value;
+                Refresh();
+            }
+        }
+
+        public void Refresh()
+        {
+            shouldRefresh = true;
+        }
 
         [MenuItem("Window/Life and Style Media/C# Preview")]
         private static void Open()
@@ -33,25 +53,33 @@ namespace Lasm.Dependencies.CSharp.Editor
 
         private void OnGUI()
         {
+            var shouldRepaint = false;
+
             scrollPosition = HUMEditor.Draw().ScrollView(scrollPosition, () =>
             {
                 HUMEditor.Vertical().Box(background, 10, () =>
                 {
                     if (code != null)
                     {
-                        output = code.Generate(0);
+                        if (shouldRefresh)
+                        {
+                            output = code.Generate(0);
+                            shouldRefresh = false;
+                            output = output.Replace("/*", "<color=#CC3333>/*");
+                            output = output.Replace("*/", "*/</color>");
+                            output = output.RemoveMarkdown();
+                            labelStyle = new GUIStyle(GUI.skin.label) { richText = true, stretchWidth = true, stretchHeight = true, alignment = TextAnchor.UpperLeft, wordWrap = true };
+                            labelStyle.normal.background = null;
+                            shouldRepaint = true;
+                        }
                     }
 
-                    output = output.Replace("/*", "<color=#CC3333>/*");
-                    output = output.Replace("*/", "*/</color>");
-                    var labelStyle = new GUIStyle(GUI.skin.label) { richText = true, stretchWidth = true, stretchHeight = true, alignment = TextAnchor.UpperLeft, wordWrap = true };
-                    labelStyle.normal.background = null;
-                    GUILayout.Label(output.RemoveMarkdown(), labelStyle);
+                    GUILayout.Label(output, labelStyle);
 
                 }, true, true);
             });
 
-            Repaint();
+            if (shouldRepaint) Repaint();
         }
     }
 }
