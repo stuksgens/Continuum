@@ -3,12 +3,9 @@ using System.Collections.Generic;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class DelegateGenerator : ConstructGenerator
+    public sealed class DelegateGenerator : MemberGenerator
     {
-        private AccessModifier scope;
-        private Type returnType;
         private List<ParameterGenerator> parameters = new List<ParameterGenerator>();
-        private string name;
         private object defaultValue;
 
         private DelegateGenerator() { }
@@ -31,7 +28,7 @@ namespace Lasm.Dependencies.CSharp
 
         public override string Generate(int indent)
         {
-            return CodeBuilder.Indent(indent) + scope.AsString() + " delegate " + returnType.Name + " " + name + "(" + GenerateParameters() + ");";
+            return CodeBuilder.Indent(indent) + scope.AsString() + " delegate ".ConstructHighlight() + returnType.Name + " " + name + "(" + GenerateParameters() + ");";
 
             string GenerateParameters()
             {
@@ -44,6 +41,5 @@ namespace Lasm.Dependencies.CSharp
                 return output;
             }
         }
-
     }
 }

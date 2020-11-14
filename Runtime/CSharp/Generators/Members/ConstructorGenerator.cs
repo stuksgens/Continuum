@@ -2,11 +2,9 @@
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class ConstructorGenerator : BodyGenerator
+    public sealed class ConstructorGenerator : MemberBodyGenerator
     {
-        private AccessModifier scope;
         private ConstructorModifier modifier;
-        private string name;
         private List<(bool hasBase, ParameterGenerator generator)> parameters = new List<(bool hasBase, ParameterGenerator generator)>();
         private List<AttributeGenerator> attributes = new List<AttributeGenerator>();
         private string body;

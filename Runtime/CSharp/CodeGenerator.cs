@@ -2,8 +2,8 @@
 
 namespace Lasm.Dependencies.CSharp
 {
-    public abstract class CodeGenerator<T> : Decorator<CodeGenerator<T>, CodeGeneratorAttribute, T>
+    public abstract class CodeGenerator<T> : Decorator<CodeGenerator<T>, CodeGeneratorAttribute, T>, ICodeGenerator
     {
-        public abstract ConstructGenerator Generate(int indent);
+        public abstract string Generate(int indent);
     }
 }

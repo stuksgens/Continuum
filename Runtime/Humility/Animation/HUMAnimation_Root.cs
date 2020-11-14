@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static partial class HUMAnimation
+namespace Lasm.Dependencies.Humility
 {
-    public static Data.Create Create(this Animator animator)
+    public static partial class HUMAnimation
     {
-        return new Data.Create(animator);
+        public static Data.Create Create(this Animator animator)
+        {
+            return new Data.Create(animator);
+        }
     }
 }

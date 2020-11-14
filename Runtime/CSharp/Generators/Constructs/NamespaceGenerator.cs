@@ -2,7 +2,7 @@
 
 namespace Lasm.Dependencies.CSharp
 {
-    public class NamespaceGenerator : BodyGenerator
+    public class NamespaceGenerator : TypeGenerator
     {
         public string @namespace;
         public List<ClassGenerator> classes = new List<ClassGenerator>();

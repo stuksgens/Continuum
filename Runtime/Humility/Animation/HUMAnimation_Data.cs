@@ -2,17 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static partial class HUMAnimation
+namespace Lasm.Dependencies.Humility
 {
-    public static partial class Data
+    public static partial class HUMAnimation
     {
-        public struct Create
+        public static partial class Data
         {
-            public Animator animator;
-
-            public Create(Animator animator)
+            public struct Create
             {
-                this.animator = animator;
+                public Animator animator;
+
+                public Create(Animator animator)
+                {
+                    this.animator = animator;
+                }
             }
         }
     }

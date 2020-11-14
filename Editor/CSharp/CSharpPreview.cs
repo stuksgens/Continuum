@@ -16,7 +16,7 @@ namespace Lasm.Dependencies.CSharp.Editor
 
         public static Color background => Styles.backgroundColor.Darken(0.1f);
 
-        public static ICSharpSelectable selection;
+        public static ICodeGenerator code;
 
         [MenuItem("Window/Life and Style Media/C# Preview")]
         private static void Open()
@@ -37,9 +37,9 @@ namespace Lasm.Dependencies.CSharp.Editor
             {
                 HUMEditor.Vertical().Box(background, 10, () =>
                 {
-                    if (selection != null)
+                    if (code != null)
                     {
-                        output = selection.Code().Generate(0);
+                        output = code.Generate(0);
                     }
 
                     output = output.Replace("/*", "<color=#CC3333>/*");

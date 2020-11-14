@@ -4,10 +4,9 @@ using System.Collections.Generic;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class PropertyGenerator : ConstructGenerator
+    public sealed class PropertyGenerator : MemberGenerator
     {
 #pragma warning disable 0649
-        public AccessModifier scope;
         public PropertyModifier modifier;
         public AccessModifier getterScope;
         public AccessModifier setterScope;
@@ -17,10 +16,8 @@ namespace Lasm.Dependencies.CSharp
         private string setterBody;
         private bool multiStatementGetter;
         private bool multiStatementSetter;
-        public string name;
         public object defaultValue;
         private bool hasDefault;
-        public Type returnType;
         private string returnTypeString;
         private bool returnTypeIsString;
         private bool stringIsValueType;

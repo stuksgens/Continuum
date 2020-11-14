@@ -2,12 +2,8 @@
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class EventGenerator : ConstructGenerator
+    public sealed class EventGenerator : MemberGenerator
     {
-        private AccessModifier scope;
-        private Type returnType;
-        private string name;
-
         private EventGenerator() { }
 
         public static EventGenerator Event(AccessModifier scope, Type returnType, string name)
