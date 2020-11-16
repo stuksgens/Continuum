@@ -36,11 +36,6 @@ namespace Lasm.Dependencies.Editor.Processing
             processes();
         }
 
-        private void AutoSaveProcess()
-        {
-            
-        }
-
         private void InitProcesses()
         {
             var _processes = typeof(GlobalProcess).Get().Derived();

@@ -74,6 +74,12 @@ namespace Lasm.Dependencies.CSharp.Editor
                         }
                     }
 
+                    if (labelStyle == null)
+                    {
+                        labelStyle = new GUIStyle(GUI.skin.label) { richText = true, stretchWidth = true, stretchHeight = true, alignment = TextAnchor.UpperLeft, wordWrap = true };
+                        labelStyle.normal.background = null;
+                    }
+
                     GUILayout.Label(output, labelStyle);
 
                 }, true, true);

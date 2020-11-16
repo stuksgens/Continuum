@@ -9,10 +9,10 @@ namespace Lasm.Dependencies.Editor.Processing
 
         public override void Process()
         {
-            if (EditorPrefs.GetBool("LifeandStyleMedia_Dependencies_AutoSave"))
+            if (EditorPrefs.GetBool("com.lasm.dependencies.AutoSave"))
             {
                 var elapsed = EditorApplication.timeSinceStartup - startTime;
-                if (elapsed > EditorPrefs.GetInt("LifeandStyleMedia_Dependencies_AutoSave"))
+                if (elapsed > EditorPrefs.GetInt("com.lasm.dependencies.AutoSaveRate"))
                 {
                     AssetDatabase.SaveAssets();
                     AssetDatabase.Refresh();

@@ -85,7 +85,8 @@ namespace Lasm.Dependencies.Humility
         /// Create an instance of a type with optional constructor parameters.
         /// </summary>
         public static object New(this HUMValue.Data.Create create, Type type, params object[] constructorParameters)
-        {
+        { 
+            if (type.IsAbstract) return null;
             if (type == typeof(int)) return 0;
             if (type == typeof(float)) return 0f;
             if (type == typeof(bool)) return false;

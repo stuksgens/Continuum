@@ -61,19 +61,38 @@ namespace Lasm.Dependencies.Humility
         public static TValue Define<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, Dictionary<TKey, TValue> deserializedDictionary, TKey key, Func<TValue, TValue> onCreated, Action<TValue> exists)
         {
             TValue value = (TValue)HUMValue.Create().New(typeof(TValue));
-
-            if (!deserializedDictionary.ContainsKey(key))
-            {
-                value = onCreated(value);
-            }
-            else
+            
+            if (deserializedDictionary.ContainsKey(key))
             {
                 value = deserializedDictionary[key];
                 exists?.DynamicInvoke(value);
             }
+            else
+            {
+                value = onCreated(value);
+                dictionary.Add(key, value);
+            }
 
             return value; 
-        } 
+        }
+
+        public static TValue DefineValueByKey<TValue>(this Dictionary<Type, TValue> dictionary, Dictionary<Type, TValue> deserializedDictionary, Type key, Func<TValue, TValue> onCreated, Action<TValue> exists)
+        {
+            TValue value = (TValue)HUMValue.Create().New(key);
+
+            if (deserializedDictionary.ContainsKey(key))
+            {
+                value = deserializedDictionary[key];
+                exists?.DynamicInvoke(value);
+            }
+            else
+            {
+                value = onCreated(value);
+                dictionary.Add(key, value);
+            }
+
+            return value;
+        }
 
         /// <summary>
         /// Removes all unused values from one dictionary, that don't exist in another.
