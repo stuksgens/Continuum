@@ -1,15 +1,18 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using Lasm.Utilities;
+using System;
 
 namespace Lasm.Dependencies.Editor
 {
+    [Serializable]
     public abstract class DependencyTool
     {
         public DependencyTool()
         {
-        }
+        } 
 
+        [SerializeField]
         public bool opened;
 
         public abstract string DisplayName { get; }

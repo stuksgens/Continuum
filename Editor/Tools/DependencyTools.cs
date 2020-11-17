@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Lasm.Dependencies.Humility;
 using Lasm.OdinSerializer;
+using System.Linq;
 
 namespace Lasm.Dependencies.Editor
 {
@@ -11,12 +12,10 @@ namespace Lasm.Dependencies.Editor
     public sealed class DependencyTools : EditorWindow
     {
         public static DependencyTools current;
-        [OdinSerialize]
-        private Dictionary<Type, DependencyTool> previousTools = new Dictionary<Type, DependencyTool>();
-        private Dictionary<Type, DependencyTool> tools = new Dictionary<Type, DependencyTool>();
-        private List<Type> keys = new List<Type>();
-
-        [MenuItem("Window/Life and Style Media/Tools")]
+        [SerializeReference]
+        public List<DependencyTool> tools = new List<DependencyTool>();
+         
+        [MenuItem("Window/Life and Style Media/Tools")]  
         public static void Open()
         {
             current = GetWindow<DependencyTools>();
@@ -29,37 +28,46 @@ namespace Lasm.Dependencies.Editor
 
             var tools = typeof(DependencyTool).Get().Derived();
 
-            for (int i = 0; i < tools.Length; i++)
+            var removables = new List<DependencyTool>();
+
+            for (int i = 0; i < this.tools.Count; i++)
             {
-                var val = this.tools.DefineValueByKey<DependencyTool>(previousTools, tools[i],
-                (tool) =>
+                if (!tools.Any((tool)=> { return tool == this.tools[i].GetType(); }))
                 {
-                    return tool;
-                },
-                (tool) =>
-                {
-                });
+                    removables.Add(this.tools[i]);
+                }
             }
 
-            keys = this.tools.KeysToList();
-
-            for (int i = 0; i < keys.Count; i++)
+            for (int i = 0; i < tools.Length; i++)
             {
-                this.tools[keys[i]].OnEnable();
+                if (!this.tools.Any((tool) => { return tool.GetType() == tools[i]; }))
+                {
+                    this.tools.Add(Activator.CreateInstance(tools[i]) as DependencyTool);
+                }
+            }
+
+            for (int i = 0; i < removables.Count; i++)
+            {
+                this.tools.Remove(removables[i]);
+            }
+
+            for (int i = 0; i < this.tools.Count; i++)
+            {
+                this.tools[i].OnEnable();
             }
         }
 
         private void OnGUI()
         {
-            for (int i = 0; i < keys.Count; i++)
+            for (int i = 0; i < this.tools.Count; i++)
             {
-                var tool = tools[keys[i]];
+                var tool = this.tools[i];
                 if (tool != null)
                 {
                     tool.opened = HUMEditor.Foldout(tool.opened, new GUIContent(tool.DisplayName, tool.Icon()), Styles.backgroundColor, Styles.borderColor, 1, () =>
                     {
                         HUMEditor.Vertical().Box(Styles.backgroundColor.Brighten(0.06f), Styles.borderColor, new RectOffset(6, 6, 6, 6), new RectOffset(1, 1, 0, 1), () => { tool.OnGUI(); });
-                    });
+                    }); 
                 }
             }
         }
