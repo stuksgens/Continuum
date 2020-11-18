@@ -23,7 +23,7 @@ namespace Lasm.Dependencies.Editor
                     var query = Activator.CreateInstance(compilers[i]) as CompilationQuery;
                     foreach (Compilable compilable in query.Query())
                     {
-                        compilable.generator.Generate(0).Save().Custom(compilable.path, compilable.fileName).Text(false);
+                        compilable.generator.GenerateClean(0).Save().Custom(compilable.path, compilable.fileName).Text(false);
                     }
                 }
 
