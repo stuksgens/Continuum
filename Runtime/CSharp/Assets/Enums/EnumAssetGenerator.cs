@@ -9,14 +9,13 @@ namespace Lasm.Dependencies.CSharp
     {
         private NamespaceGenerator @namespace;
         private EnumGenerator @enum;
-        private string guid;
         private string output;
 
         public override string Generate(int indent)
         {
             if (!(string.IsNullOrEmpty(decorated.@namespace) || string.IsNullOrWhiteSpace(decorated.@namespace))) @namespace = NamespaceGenerator.Namespace(decorated.@namespace.ToString());
             @enum = EnumGenerator.Enum(decorated.title.LegalMemberName());
-            guid = decorated.GetGUID();
+            @enum.indexing = decorated.index;
 
             for (int i = 0; i < decorated.items.Count; i++)
             {

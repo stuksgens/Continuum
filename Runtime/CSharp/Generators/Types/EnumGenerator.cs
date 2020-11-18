@@ -12,6 +12,7 @@ namespace Lasm.Dependencies.CSharp
         private string typeName;
         private List<AttributeGenerator> attributes = new List<AttributeGenerator>();
         private List<EnumValueGenerator> items = new List<EnumValueGenerator>();
+        public bool indexing;
 
         protected override string GenerateBefore(int indent)
         {
@@ -34,7 +35,7 @@ namespace Lasm.Dependencies.CSharp
             for (int i = 0; i < items.Count; i++)
             {
                 if (string.IsNullOrEmpty(items[i].name)) { continue; }
-                output += CodeBuilder.Indent(indent) + items[i].name.LegalMemberName() + " = " + items[i].index.ToString().NumericHighlight();
+                output += CodeBuilder.Indent(indent) + items[i].name.LegalMemberName() + (indexing ? " = " + items[i].index.ToString().NumericHighlight() : string.Empty);
                 if (i < items.Count - 1)
                 {
                     output += ",";
