@@ -4,7 +4,7 @@ using UnityEditor;
 
 namespace Lasm.Dependencies.CSharp
 {
-    public sealed class EnumCompilatationQuery : CompilationQuery
+    public sealed class EnumCompilationQuery : CompilationQuery
     {
         public override IEnumerable<Compilable> Query()
         {
