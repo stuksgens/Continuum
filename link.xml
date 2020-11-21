@@ -1,0 +1,3 @@
+<linker>
+       <assembly fullname="Lasm.Dependencies.Runtime" preserve="all"/>
+</linker>
