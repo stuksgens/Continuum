@@ -103,9 +103,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities.Editor
                 {
                     BuildTarget.StandaloneWindows,
                     BuildTarget.StandaloneWindows64,
-                    BuildTarget.StandaloneLinux,
                     BuildTarget.StandaloneLinux64,
-                    BuildTarget.StandaloneLinuxUniversal,
                     BuildTarget.Android
                 })
                 .ToArray());

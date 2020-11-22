@@ -770,7 +770,7 @@ namespace Lasm.Dependencies.OdinSerializer
                                 if (data.PrefabModificationsReferencedUnityObjects != null && data.PrefabModificationsReferencedUnityObjects.Count > 0)
                                 {
                                     //var prefabRoot = UnityEditor.PrefabUtility.FindPrefabRoot(((Component)data.Prefab).gameObject);
-                                    var instanceRoot = UnityEditor.PrefabUtility.FindPrefabRoot(((Component)unityObject).gameObject);
+                                    var instanceRoot = UnityEditor.PrefabUtility.GetOutermostPrefabInstanceRoot(((Component)unityObject).gameObject);
 
                                     foreach (var reference in data.PrefabModificationsReferencedUnityObjects)
                                     {
@@ -778,12 +778,11 @@ namespace Lasm.Dependencies.OdinSerializer
                                         if (!(reference is GameObject || reference is Component)) continue;
                                         if (UnityEditor.AssetDatabase.Contains(reference)) continue;
 
-                                        var referencePrefabType = UnityEditor.PrefabUtility.GetPrefabType(reference);
+                                        var referencePrefabType = UnityEditor.PrefabUtility.GetPrefabAssetType(reference);
 
-                                        bool mightBeInPrefab = referencePrefabType == UnityEditor.PrefabType.Prefab
-                                                            || referencePrefabType == UnityEditor.PrefabType.PrefabInstance
-                                                            || referencePrefabType == UnityEditor.PrefabType.ModelPrefab
-                                                            || referencePrefabType == UnityEditor.PrefabType.ModelPrefabInstance;
+                                        bool mightBeInPrefab = referencePrefabType == UnityEditor.PrefabAssetType.Regular
+                                                            || referencePrefabType == UnityEditor.PrefabAssetType.Variant
+                                                            || referencePrefabType == UnityEditor.PrefabAssetType.Model;
 
                                         if (!mightBeInPrefab)
                                         {
@@ -803,7 +802,7 @@ namespace Lasm.Dependencies.OdinSerializer
                                         }
 
                                         var gameObject = (GameObject)(reference is GameObject ? reference : (reference as Component).gameObject);
-                                        var referenceRoot = UnityEditor.PrefabUtility.FindPrefabRoot(gameObject);
+                                        var referenceRoot = UnityEditor.PrefabUtility.GetOutermostPrefabInstanceRoot(gameObject);
 
                                         if (referenceRoot != instanceRoot)
                                         {
@@ -2571,13 +2570,12 @@ namespace Lasm.Dependencies.OdinSerializer
                         {
                             if (!(n is GameObject)) return false;
 
-                            var prefabType = UnityEditor.PrefabUtility.GetPrefabType(n);
-                            return prefabType == UnityEditor.PrefabType.Prefab
-                                || prefabType == UnityEditor.PrefabType.ModelPrefab
-                                || prefabType == UnityEditor.PrefabType.PrefabInstance
-                                || prefabType == UnityEditor.PrefabType.ModelPrefabInstance;
+                            var prefabType = UnityEditor.PrefabUtility.GetPrefabAssetType(n);
+                            return prefabType == UnityEditor.PrefabAssetType.Regular
+                                || prefabType == UnityEditor.PrefabAssetType.Variant
+                                || prefabType == UnityEditor.PrefabAssetType.Model;
                         })
-                        .Select(n => UnityEditor.PrefabUtility.FindPrefabRoot((GameObject)n))
+                        .Select(n => UnityEditor.PrefabUtility.GetOutermostPrefabInstanceRoot((GameObject)n))
                         .Distinct();
 
                     foreach (var root in rootPrefabs)
