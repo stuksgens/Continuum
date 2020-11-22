@@ -112,7 +112,7 @@ namespace Lasm.Dependencies.OdinSerializer
             var parameters = info.GetParameters();
             if (parameters.Length == 0)
             {
-#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if CAN_EMIT
                 var action = EmitUtilities.CreateInstanceRefMethodCaller<T>(info);
                 return (ref T value, StreamingContext context) => action(ref value);
 #else
@@ -126,7 +126,7 @@ namespace Lasm.Dependencies.OdinSerializer
             }
             else if (parameters.Length == 1 && parameters[0].ParameterType == typeof(StreamingContext) && parameters[0].ParameterType.IsByRef == false)
             {
-#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if CAN_EMIT
                 var action = EmitUtilities.CreateInstanceRefMethodCaller<T, StreamingContext>(info);
                 return (ref T value, StreamingContext context) => action(ref value, context);
 #else

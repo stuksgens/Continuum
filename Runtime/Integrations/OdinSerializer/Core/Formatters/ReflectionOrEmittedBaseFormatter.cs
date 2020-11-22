@@ -24,7 +24,7 @@ namespace Lasm.Dependencies.OdinSerializer
 {
     public abstract class ReflectionOrEmittedBaseFormatter<T> : ReflectionFormatter<T>
     {
-#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if CAN_EMIT
 
         protected override void DeserializeImplementation(ref T value, IDataReader reader)
         {

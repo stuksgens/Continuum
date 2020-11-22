@@ -16,12 +16,20 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
+#if NET_STANDARD_2_0
+#error Odin Inspector is incapable of compiling source code against the .NET Standard 2.0 API surface. You can change the API Compatibility Level in the Player settings.
+#endif
+
+#if (UNITY_EDITOR || UNITY_STANDALONE) && !ENABLE_IL2CPP
+#define CAN_EMIT
+#endif
+
 namespace Lasm.Dependencies.OdinSerializer.Utilities
 {
     using System;
     using System.Reflection;
 
-#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if CAN_EMIT
 
     using System.Reflection.Emit;
 
@@ -74,7 +82,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
         {
             get
             {
-#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if CAN_EMIT
                 return true;
 #else
                 return false;
@@ -109,7 +117,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 return () => value;
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate ()
             {
@@ -148,7 +156,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate ()
             {
@@ -199,7 +207,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Field cannot be constant.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (FieldType value)
             {
@@ -239,7 +247,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (object value)
             {
@@ -291,7 +299,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref InstanceType classInstance)
             {
@@ -348,7 +356,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref object classInstance)
             {
@@ -407,7 +415,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref object classInstance)
             {
@@ -472,7 +480,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref InstanceType classInstance, FieldType value)
             {
@@ -545,7 +553,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref object classInstance, FieldType value)
             {
@@ -618,7 +626,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             fieldInfo = fieldInfo.DeAliasField();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref object classInstance, object value)
             {
@@ -720,7 +728,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Property cannot be static.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref object classInstance)
             {
@@ -816,7 +824,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Property cannot be static.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref object classInstance, object value)
             {
@@ -928,7 +936,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Property must be static.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (PropType value)
             {
@@ -981,7 +989,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Property must be static.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate ()
             {
@@ -1042,7 +1050,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Property cannot be static.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref InstanceType classInstance, PropType value)
             {
@@ -1120,7 +1128,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
                 throw new ArgumentException("Property cannot be static.");
             }
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (ref InstanceType classInstance)
             {
@@ -1237,7 +1245,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return (object classInstance, TArg1 arg) =>
             {
@@ -1298,7 +1306,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return delegate (object classInstance)
             {
@@ -1391,7 +1399,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return (object classInstance, TArg1 arg1) =>
             {
@@ -1459,7 +1467,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return (object classInstance) =>
             {
@@ -1530,7 +1538,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return (object classInstance, TArg arg) =>
             {
@@ -1667,7 +1675,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
 
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return (ref InstanceType instance) =>
             {
@@ -1726,7 +1734,7 @@ namespace Lasm.Dependencies.OdinSerializer.Utilities
             
             methodInfo = methodInfo.DeAliasMethod();
 
-#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
+#if !CAN_EMIT
             // Platform does not support emitting dynamic code
             return (ref InstanceType instance, Arg1 arg1) =>
             {
