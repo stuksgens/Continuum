@@ -298,7 +298,7 @@ namespace Lasm.Dependencies.OdinSerializer
 
             if (OnLocatedEmittableFormatterForType != null && result.GetType().IsGenericType)
             {
-#if CAN_EMIT
+#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
                 if (result.GetType().GetGenericTypeDefinition() == typeof(FormatterEmitter.RuntimeEmittedFormatter<>))
                 {
                     OnLocatedEmittableFormatterForType(type);

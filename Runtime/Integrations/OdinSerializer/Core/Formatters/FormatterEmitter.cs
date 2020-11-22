@@ -29,7 +29,7 @@ namespace Lasm.Dependencies.OdinSerializer
     using System.Reflection;
     using UnityEngine;
 
-#if CAN_EMIT
+#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
 
     using System.Reflection.Emit;
 
@@ -81,7 +81,7 @@ namespace Lasm.Dependencies.OdinSerializer
             }
         }
 
-#if CAN_EMIT
+#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
 
         private static readonly object LOCK = new object();
         private static readonly DoubleLookupDictionary<ISerializationPolicy, Type, IFormatter> Formatters = new DoubleLookupDictionary<ISerializationPolicy, Type, IFormatter>();
@@ -129,7 +129,7 @@ namespace Lasm.Dependencies.OdinSerializer
         /// <exception cref="System.ArgumentNullException">The type argument is null.</exception>
         public static IFormatter GetEmittedFormatter(Type type, ISerializationPolicy policy)
         {
-#if !CAN_EMIT
+#if !(UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
         Debug.LogError("Cannot use Reflection.Emit on the current platform. The FormatterEmitter class is currently disabled. Check whether emitting is currently possible with EmitUtilities.CanEmit.");
         return null;
 #else
@@ -172,7 +172,7 @@ namespace Lasm.Dependencies.OdinSerializer
 #endif
         }
 
-#if CAN_EMIT
+#if (UNITY_EDITOR || UNITY_STANDALONE || !ENABLE_IL2CPP)
 
         private static void EnsureRuntimeAssembly()
         {
