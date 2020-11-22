@@ -22,7 +22,7 @@ using Lasm.Dependencies.OdinSerializer;
 
 namespace Lasm.Dependencies.OdinSerializer
 {
-    using OdinSerializer.Utilities;
+    using Lasm.Dependencies.OdinSerializer.Utilities;
     using UnityEngine;
 
     /// <summary>

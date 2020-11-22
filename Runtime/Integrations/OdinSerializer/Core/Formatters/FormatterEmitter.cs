@@ -22,7 +22,7 @@
 
 namespace Lasm.Dependencies.OdinSerializer
 {
-    using OdinSerializer.Utilities;
+    using Lasm.Dependencies.OdinSerializer.Utilities;
     using System;
     using System.Collections.Generic;
     using System.Linq;

@@ -18,8 +18,8 @@
 
 namespace Lasm.Dependencies.OdinSerializer
 {
-    using OdinSerializer.Utilities;
-    using OdinSerializer.Utilities.Unsafe;
+    using Lasm.Dependencies.OdinSerializer.Utilities;
+    using Lasm.Dependencies.OdinSerializer.Utilities.Unsafe;
     using System;
     using System.Collections.Generic;
     using System.IO;
