@@ -2,7 +2,7 @@
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Lasm.Utilities
+namespace Lasm.Dependencies.Utilities
 {
     public static class Images
     {

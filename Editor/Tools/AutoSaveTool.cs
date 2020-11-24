@@ -1,4 +1,4 @@
-﻿using Lasm.Utilities;
+﻿using Lasm.Dependencies.Utilities;
 using UnityEditor;
 using UnityEngine;
 

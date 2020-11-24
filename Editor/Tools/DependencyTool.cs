@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using Lasm.Utilities;
+using Lasm.Dependencies.Utilities;
 using System;
 
 namespace Lasm.Dependencies.Editor

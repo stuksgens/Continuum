@@ -3,7 +3,7 @@ using Lasm.Dependencies.Humility;
 using Lasm.Dependencies.CSharp;
 using System;
 using UnityEditor;
-using Lasm.Utilities;
+using Lasm.Dependencies.Utilities;
 
 namespace Lasm.Dependencies.Editor
 {
