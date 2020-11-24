@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using Lasm.Utilities;
+using UnityEditor;
 using UnityEngine;
 
 namespace Lasm.Dependencies.Editor
@@ -27,6 +28,11 @@ namespace Lasm.Dependencies.Editor
             autoSaveRate = EditorGUILayout.IntSlider("Save Rate (Seconds)", autoSaveRate, 10, 600);
             if (EditorPrefs.GetBool("com.lasm.dependencies.AutoSave") != autoSave) EditorPrefs.SetBool("com.lasm.dependencies.AutoSave", autoSave);
             if (EditorPrefs.GetInt("com.lasm.dependencies.AutoSaveRate") != autoSaveRate) EditorPrefs.SetInt("com.lasm.dependencies.AutoSaveRate", autoSaveRate);
+        }
+
+        public override Texture2D Icon()
+        {
+            return Images.Load("Tools", "save", "lasm_dependencies_tools");
         }
     }
 }

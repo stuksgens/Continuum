@@ -1,4 +1,4 @@
-﻿using Lasm.Dependencies.OdinSerializer;
+﻿using Lasm.OdinSerializer;
 using System.IO;
 using UnityEditor;
 using UnityEngine;

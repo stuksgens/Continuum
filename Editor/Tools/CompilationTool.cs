@@ -3,6 +3,7 @@ using Lasm.Dependencies.Humility;
 using Lasm.Dependencies.CSharp;
 using System;
 using UnityEditor;
+using Lasm.Utilities;
 
 namespace Lasm.Dependencies.Editor
 {
@@ -30,6 +31,11 @@ namespace Lasm.Dependencies.Editor
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
             }
+        }
+
+        public override Texture2D Icon()
+        {
+            return Images.Load("Tools", "compilation", "lasm_dependencies_tools");
         }
     }
 }
