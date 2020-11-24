@@ -36,6 +36,7 @@ namespace Lasm.Dependencies.CSharp.Editor
         public void Refresh()
         {
             shouldRefresh = true;
+            Repaint();
         }
 
         [MenuItem("Window/Life and Style Media/C# Preview")]
