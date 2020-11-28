@@ -1,15 +1,15 @@
-# DEPENDENCIES
+# CONTINUUM
 
-Life and Style Media Core Framework
+A tool for designing performant and beautiful UX/UI based extensions for Unity.
 
-This library and tool set is intended to help everyone create and deliver games, applications, and tools that are modular, performant, and easy to read.
-
-Currently we are not ready for prime time! No bug reports will be accepted. This will be ready shortly.
+We want to help take democratization to the next level, by introducing a new layer for developing your Unity tools. Weither you use the built in tool creator pipeline, or choose to use strictly text code, all facets are available to you with C# generation in mind. 
 
 ## Includes Reusable:<br/><br/>
 
+- Custom Tools Rack with Auto Foldouts and Icon
+- Custom C# Generators using Built-in Generators and C# Generation Library
 - C# Preview Window<br/>
-- C# Generation library<br/>
-- Humility Speech Like Library<br/>
+- Humility: A Large Speech Like Library for low syntax and mathless development.<br/>
 - Custom Sequential Functions and Routines<br/>
-- Odin Serializer<br/>
+- Extended Assets for Developing Tools in Realtime
+- Odin Serializer Integration<br/>
