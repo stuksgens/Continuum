@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public static partial class HUMQuery
     {

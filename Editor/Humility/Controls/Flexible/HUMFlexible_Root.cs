@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEditor;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public static partial class HUMEditor
     {

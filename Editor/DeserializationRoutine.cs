@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEditor;
-using Lasm.Dependencies.Humility;
+using Lasm.Continuum.Humility;
 
-namespace Lasm.Dependencies.Editor.Processing
+namespace Lasm.Continuum.Editor.Processing
 {
     public static class DeserializationRoutine
     {

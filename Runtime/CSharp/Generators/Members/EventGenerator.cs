@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     public sealed class EventGenerator : MemberGenerator
     {

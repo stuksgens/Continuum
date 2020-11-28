@@ -1,9 +1,9 @@
-﻿using Lasm.Dependencies.Editor;
-using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Editor;
+using Lasm.Continuum.Humility;
 using UnityEditor;
 using UnityEngine;
 
-namespace Lasm.Dependencies.CSharp.Editor
+namespace Lasm.Continuum.CSharp.Editor
 {
     public sealed class CSharpPreview : EditorWindow
     {

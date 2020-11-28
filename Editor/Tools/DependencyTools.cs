@@ -2,10 +2,10 @@
 using UnityEngine;
 using System;
 using System.Collections.Generic;
-using Lasm.Dependencies.Humility;
+using Lasm.Continuum.Humility;
 using System.Linq;
 
-namespace Lasm.Dependencies.Editor
+namespace Lasm.Continuum.Editor
 {
     [Serializable]
     public sealed class DependencyTools : EditorWindow

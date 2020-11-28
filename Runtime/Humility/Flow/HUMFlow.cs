@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public static partial class HUMFlow
     {

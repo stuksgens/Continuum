@@ -1,4 +1,4 @@
-﻿namespace Lasm.Dependencies.Humility
+﻿namespace Lasm.Continuum.Humility
 {
     /// <summary>
     /// The type of UnityEngine Time type.

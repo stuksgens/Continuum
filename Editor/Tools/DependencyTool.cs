@@ -1,9 +1,9 @@
 ﻿using UnityEditor;
 using UnityEngine;
-using Lasm.Dependencies.Utilities;
+using Lasm.Continuum.Utilities;
 using System;
 
-namespace Lasm.Dependencies.Editor
+namespace Lasm.Continuum.Editor
 {
     [Serializable]
     public abstract class DependencyTool

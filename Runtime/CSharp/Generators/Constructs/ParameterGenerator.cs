@@ -1,7 +1,7 @@
-﻿using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Humility;
 using System;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     public sealed class ParameterGenerator : ConstructGenerator
     {

@@ -1,8 +1,8 @@
-﻿using Lasm.Dependencies.Utilities;
+﻿using Lasm.Continuum.Utilities;
 using UnityEditor;
 using UnityEngine;
 
-namespace Lasm.Dependencies.Editor
+namespace Lasm.Continuum.Editor
 {
     public sealed class AutoSaveTool : DependencyTool
     {

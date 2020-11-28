@@ -1,8 +1,8 @@
-﻿using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Humility;
 using UnityEditor;
 using UnityEngine;
 
-namespace Lasm.Dependencies.Editor
+namespace Lasm.Continuum.Editor
 {
     public static class Styles
     {

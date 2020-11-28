@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
-using Lasm.Dependencies.Humility;
-using Lasm.Dependencies.CSharp;
+using Lasm.Continuum.Humility;
+using Lasm.Continuum.CSharp;
 using System;
 using UnityEditor;
-using Lasm.Dependencies.Utilities;
+using Lasm.Continuum.Utilities;
 
-namespace Lasm.Dependencies.Editor
+namespace Lasm.Continuum.Editor
 {
     public sealed class CompilationTool : DependencyTool
     {

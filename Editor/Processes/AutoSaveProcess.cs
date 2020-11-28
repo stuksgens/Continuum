@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace Lasm.Dependencies.Editor.Processing
+namespace Lasm.Continuum.Editor.Processing
 {
     public sealed class AutoSaveProcess : GlobalProcess
     {

@@ -1,4 +1,4 @@
-﻿namespace Lasm.Dependencies.Editor.Processing
+﻿namespace Lasm.Continuum.Editor.Processing
 {
     public abstract class GlobalProcess
     {

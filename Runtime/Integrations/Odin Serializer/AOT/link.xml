@@ -1,0 +1,3 @@
+<linker>
+       <assembly fullname="Lasm.Continuum.OdinSerializer" preserve="all"/>
+</linker>

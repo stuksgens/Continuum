@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reflection;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public static partial class HUMType
     {

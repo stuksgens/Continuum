@@ -1,8 +1,8 @@
-﻿using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Humility;
 using System;
 using System.Collections.Generic;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     public sealed class MethodGenerator : BodyGenerator
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public static partial class HUMMath
     {

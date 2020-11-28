@@ -1,6 +1,6 @@
-﻿using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Humility;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     public abstract class CodeGenerator<T> : Decorator<CodeGenerator<T>, CodeGeneratorAttribute, T>, ICodeGenerator
     {

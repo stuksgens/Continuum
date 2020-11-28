@@ -1,8 +1,8 @@
-﻿using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Humility;
 using System.Collections;
 using UnityEngine;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     [CodeGenerator(typeof(EnumAsset))]
     public sealed class EnumAssetGenerator : CodeGenerator<EnumAsset>

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System;
-using Lasm.Dependencies.Humility;
+using Lasm.Continuum.Humility;
 
-namespace Lasm.Dependencies.Editor
+namespace Lasm.Continuum.Editor
 {
     public static class CoreGUI
     {

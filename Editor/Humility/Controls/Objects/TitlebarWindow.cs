@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     /// <summary>
     /// A custom floating/dockable window with a custom title bar graphics and status buttons intended to be like a desktop window. Close, Minimize, and Maximimize.

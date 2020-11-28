@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     [Serializable]
     public abstract class TypeAsset : ScriptableObject, ITypeDeclaration

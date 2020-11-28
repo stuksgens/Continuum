@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace Lasm.Dependencies.Humility {
+namespace Lasm.Continuum.Humility {
     public static partial class HUMString
     {
         public static Data.Remove Remove(this string text, string remove)

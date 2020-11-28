@@ -1,4 +1,4 @@
-﻿namespace Lasm.Dependencies.CSharp.Editor
+﻿namespace Lasm.Continuum.CSharp.Editor
 {
     public interface ICSharpSelectable
     {

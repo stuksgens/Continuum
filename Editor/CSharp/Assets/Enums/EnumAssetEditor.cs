@@ -1,4 +1,4 @@
-﻿using Lasm.Dependencies.Humility;
+﻿using Lasm.Continuum.Humility;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 using UEditor = UnityEditor.Editor;
 
-namespace Lasm.Dependencies.CSharp.Editor
+namespace Lasm.Continuum.CSharp.Editor
 {
     [CustomEditor(typeof(EnumAsset))]
     public class EnumAssetEditor : UEditor

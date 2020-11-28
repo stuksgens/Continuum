@@ -1,4 +1,4 @@
-﻿namespace Lasm.Dependencies.CSharp
+﻿namespace Lasm.Continuum.CSharp
 {
     public static class Patcher
     {

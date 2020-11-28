@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     [Serializable]
     [CreateAssetMenu(fileName = "New Enum", menuName = "Life and Style Media/CSharp/Enum", order = 0)]

@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public abstract class AdvancedField<TFieldElement, T> : VisualElement where TFieldElement : BaseField<T>, new()
     {

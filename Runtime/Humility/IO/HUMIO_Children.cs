@@ -1,9 +1,9 @@
-﻿using Lasm.OdinSerializer;
+﻿using Lasm.Continuum.OdinSerializer;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Lasm.Dependencies.Humility
+namespace Lasm.Continuum.Humility
 {
     public static partial class HUMIO_Children
     {

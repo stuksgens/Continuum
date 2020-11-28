@@ -2,9 +2,9 @@
 using UnityEngine;
 using System;
 using System.Reflection;
-using Lasm.Dependencies.Humility;
+using Lasm.Continuum.Humility;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     /// <summary>
     /// Gives you access to utilities methods to more easily build custom code.

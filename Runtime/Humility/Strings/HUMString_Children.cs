@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace Lasm.Dependencies.Humility {
+namespace Lasm.Continuum.Humility {
     public static partial class HUMString_Children
     {
         /// <summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Lasm.Dependencies.CSharp
+namespace Lasm.Continuum.CSharp
 {
     /// <summary>
     /// A generator that retains data for creating a Binary Operator as a string.
